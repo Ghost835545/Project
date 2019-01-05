@@ -39,9 +39,9 @@ public class FragmentUsers extends Fragment {
     private static int SCREEN_WIDTH;
     RelativeLayout relativeLayoutMain;
 
-    RelativeLayout relativeLayoutA;
+
     RelativeLayout relativeLayoutB;
-    RelativeLayout relativeLayoutC;
+
     RelativeLayout relativeLayoutD;
 
     TableLayout tableLayoutA;
