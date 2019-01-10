@@ -118,6 +118,7 @@
             android:layout_column="0"
             android:layout_gravity="top|center_horizontal"
             android:text="@string/buttonN"
+            android:textColor="#fff"
             />
     </GridLayout>
 

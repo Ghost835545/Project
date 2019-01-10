@@ -93,6 +93,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:text="@string/action_sign_in"
+                android:textColor="#fff"
                 android:textStyle="bold" />
 
 
