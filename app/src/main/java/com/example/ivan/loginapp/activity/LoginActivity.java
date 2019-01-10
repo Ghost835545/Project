@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+import com.example.ivan.loginapp.Position;
 import com.example.ivan.loginapp.R;
 
 import com.example.ivan.loginapp.User;
@@ -78,12 +79,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-
         mLoginView = (AutoCompleteTextView) findViewById(R.id.login);
         populateAutoComplete();
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -119,10 +120,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
     }
-    public void startNavigationActivity()
+    public void startNavigationActivity(String Fio)
     {
-        final Intent intent = new Intent(this, NavigationActivity.class);
+        Intent intent = new Intent(this, NavigationActivity.class);
+        intent.putExtra("Fio",Fio);
         startActivity(intent);
+
     }
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
@@ -352,8 +355,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
-                startNavigationActivity();
-                //Toast.makeText(getApplicationContext(), user.toString(), Toast.LENGTH_SHORT).show();
+                String Fio = user.getGroup().getPosition().getPosition()+"\n"+"\n"+user.getFio();
+                startNavigationActivity(Fio);
+                //Toast.makeText(getApplicationContext(), user.getFio()+" "+user.getEmail(), Toast.LENGTH_SHORT).show();
 
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

@@ -15,18 +15,9 @@ public class User {
     private String email;
     private Byte status;
     private Group group;
-    private Position position;
 
     public User() {
 
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
     }
 
     public Integer getIdUser() {

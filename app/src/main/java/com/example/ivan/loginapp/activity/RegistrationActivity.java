@@ -69,7 +69,6 @@ public class RegistrationActivity extends AppCompatActivity {
         user.setEmail(email);
         user.setDateReg(new Date());
         user.setDateAuth(new Date());
-        user.setPosition(group.getPosition());
         user.setStatus((byte)1);
         RegistUserTask task = new RegistUserTask(user);
         task.execute();

@@ -44,5 +44,7 @@
     <string name="title_ftests">Тесты</string>
     <!--- fragment_result-->
     <string name="title_result">Результаты теста</string>
+    <!-- activity_edit_password-->
+    <string name="title_edit_password">Смена пароля</string>
 
 </resources>
