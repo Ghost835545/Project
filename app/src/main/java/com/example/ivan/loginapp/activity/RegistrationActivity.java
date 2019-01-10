@@ -27,6 +27,17 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         //ActionBar actionBar = getActionBar();
         //actionBar.setDisplayHomeAsUpEnabled(true);
+        CheckBox checkBox = findViewById(R.id.checkbox);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Spinner spinner = findViewById(R.id.groups);
+                    spinner.setSelection(0);
+                }
+            }
+        });
         Spinner spinner = findViewById(R.id.groups);
         HttpRequestTask task = new HttpRequestTask(this);
         task.execute();
